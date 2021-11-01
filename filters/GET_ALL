@@ -1,0 +1,11 @@
+#!/bin/sh -efu
+
+lst=$(device_c ask db list)
+
+for name in $lst; do
+  for i in $(seq 0 5); do
+    flt=$(device_c ask db print_filter $name $i)
+    [ "$flt" != "" ] || continue
+    echo "$flt" > "$name:$i"
+  done
+done

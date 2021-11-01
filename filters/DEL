@@ -1,0 +1,13 @@
+#!/bin/sh -efu
+
+n=$1
+
+name=${n%:*}
+flt=${n##*:}
+
+test -f $n
+
+rm -f $n
+device_c ask db set_filter "$name" "$flt" ""
+device_c ask db_xyz set_filter "$name" "$flt" ""
+
