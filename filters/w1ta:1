@@ -6,8 +6,8 @@ set  b 0.00150176667180501
 #set c -1.0480385045568e-08
 set  c -1.2742134866821e-08
 
-set I [lindex [graphene_get demag_pc:f1 $time] 1]
-set ph [lindex [graphene_get cell1_phase $time] 1]
+set I [lindex [graphene_get demag_pc:f1 $t] 1]
+set ph [lindex [graphene_get cell1_phase $t] 1]
 
 set data [expr {$x - $a - $b*$I**2 - $c*$I**4} ]
 set time $t
@@ -597,3 +597,4 @@ if {$ph == 3 } {
 }
 
 # width w/o intrinsic width
+return 0
