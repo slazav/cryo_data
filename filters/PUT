@@ -1,13 +1,29 @@
 #!/bin/sh -efu
 
 
-n=$1
+for n in "$@"; do
 
-name=${n%:*}
-flt=${n##*:}
+  name=${n%:*}
+  flt_num=${n##*:}
 
-test -f $n
+  test -f $n
 
-device_c ask db set_filter "$name" "$flt" "$(cat $n)"
-device_c ask db_xyz set_filter "$name" "$flt" "$(cat $n)"
+  flt_text=$(grep -v "^\#" $n)
+
+  if [ "$name" = press_1K -o\
+       "$name" = press_cell_panel -o\
+       "$name" = press_cond -o\
+       "$name" = press_misc -o\
+       "$name" = press_still -o\
+       "$name" = press_traps ]; then
+    echo "$n -> db_rpi"
+    device_c ask db_rpi set_filter "$name" "$flt_num" "$flt_text"
+  fi
+
+  echo "$n -> db"
+  device_c ask db set_filter "$name" "$flt_num" "$flt_text"
+  echo "$n -> db_xyz"
+  device_c ask db_xyz set_filter "$name" "$flt_num" "$flt_text"
+
+done
 
