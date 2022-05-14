@@ -101,4 +101,10 @@ set tab {
 233.275395   0.02205
 243.065387   0.02000
 }
+
+# fix 2021-08-01 jump!
+if {$time>1627772400} {
+  lset data 0 [expr {[lindex $data 0] * 47.776/47.928}]
+}
+
 flt_table_lookup $tab 0 0
