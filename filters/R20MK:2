@@ -1,1 +1,1 @@
-set data [expr {[lindex $data 0]/55.885}]
+set data [expr {87.4727/[lindex $data 0]}]

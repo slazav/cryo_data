@@ -1,1 +1,5 @@
-set data [expr {[lindex $data 0]/49.250}]
+# Second heat exchanger; ratio with 4K
+# Value before 01.08.2021 is different because resistance changed
+# after HE soldering.
+set data [expr {88.3854/[lindex $data 0]}]
+if {$time < 1627772400} { set data [expr {$data/1.122}]}
