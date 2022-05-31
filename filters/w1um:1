@@ -1,11 +1,11 @@
 set w [lindex $data 12]
 set t $time
 
-set a 0.1966
-set b 4.6041
+set a 0.3248
+set b 6.5632
 
 set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
-set ph [lindex [graphene_get_prev cell2_phase $t] 1]
+set ph [lindex [graphene_get_prev cell1_phase $t] 1]
 set P  [lindex [graphene_get_prev cell_press $t] 1]
 
 if { $P eq {nan} } {return 0}
@@ -15,7 +15,7 @@ set w [expr {$w - $a - $b*$B**2} ]
 if {$w<0} {set w 0}
 
 # normal:
-if {$ph == 3 || $ph == 5 } { set tab [lrange [graphene_get c_w2um_b $w] 1 end] }\
+if {$ph == 3 || $ph == 5 } { set tab [lrange [graphene_get c_w1um_b $w] 1 end] }\
 else {return 0}
 
 set data [table_lookup $tab $P 0]

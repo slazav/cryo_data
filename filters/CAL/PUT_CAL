@@ -1,0 +1,19 @@
+#!/bin/sh -efu
+
+# Put calibration in a separate database.
+# All databases have prefix c_ to avoid mixing with normal ones.
+# File <name>.dat does into c_<name> database.
+
+for f in "$@"; do
+  dbname=c_${f%.dat}
+  for dbdev in db db_xyz; do
+    echo "$dbname -> $dbdev"
+    (
+      echo "delete $dbname"
+      echo "create $dbname FLOAT"
+      while read l; do echo "put $dbname $l"; done < $f
+    ) | device_c use_dev $dbdev &>/dev/null
+  done
+
+done
+

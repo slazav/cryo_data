@@ -1,0 +1,79 @@
+#!/usr/bin/octave-cli
+
+pkg load he3lib
+
+
+# Wire parameters:
+name={"w0ta"; "w1ta"; "w2ta"; "w0um"; "w1um"; "w2um"; "w1nm"};  # name
+rho=[16.7, 16.7, 16.7, 6.05, 6.05, 6.05, 6.05];                 # density [g/cm3]
+diam=[124, 124, 124, 4.5, 4.5, 4.5, 0.45];                      # diameter [microns]
+freq=[1715, 2059, 2028, 3131.5, 3142.5, 1741.1, 4333.3];        # vac.freq [Hz]
+mkn = [1,1,1,0,0,0,0];  # make normal phase calibration?
+
+# min/max width in normal/b-phase
+wnmin = 1;
+wnmax = 700;
+wbmin = 0.01;
+wbmax = 700;
+
+tnmin = 0.8e-3;
+tnmax = 0.210;
+tbmin = 80e-6;
+tbmax = 2e-3;
+
+
+P=0:1:30;  # pressure grid
+
+function print_file(name, wn, t, P)
+  fo=fopen(name, 'w');
+  for i = 1:length(wn)
+    fprintf(fo, "%f ", exp(wn(i)));
+    for np= 1:length(P)
+      v = exp(t(i,np))*1e3;
+      if (isnan(v))
+        fprintf(fo, " %.1f nan", P(np));
+      else
+        fprintf(fo, " %.1f %f", P(np), v);
+      end
+    end
+    fprintf(fo, "\n");
+  end
+  fclose(fo);
+end
+
+
+# Temperature grid: log scale, 0.9..210mK.
+# Use more points to have better interpolation accuracy.
+# Width grid, log scale, final number of points.
+tn = linspace(log(tnmin), log(tnmax), 500);
+wn = linspace(log(wnmin), log(wnmax), 200);
+
+for n=1:length(name)
+  if !mkn(n) continue end
+  # for each pressure find width on temperature grid and interpolate
+  # to width grid
+  for np = 1:length(P)
+    w = log(he3_lancwire_n_w(exp(tn),P(np),rho(n),diam(n),freq(n)));
+    ii=isnan(w);
+    t(:,np)=interp1(w(~ii),tn(~ii), wn);
+  end
+
+  print_file([name{n}, '_n.dat'], wn, t, P);
+end
+
+# Same for superfluid
+tn = linspace(log(tbmin), log(tbmax), 500);
+wn = linspace(log(wbmin), log(wbmax), 200);
+
+for n=1:length(name)
+  # for each pressure find width on temperature grid and interpolate
+  # to width grid
+  for np = 1:length(P)
+    w = log(he3_lancwire_b_w(exp(tn),P(np),rho(n),diam(n),freq(n)));
+    ii=isnan(w);
+    t(:,np)=interp1(w(~ii),tn(~ii), wn);
+  end
+
+  print_file([name{n}, '_b.dat'], wn, t, P);
+end
+
