@@ -14,6 +14,9 @@ if { $P eq {nan} } {return 0}
 set w [expr {$w - $a - $b*$B**2} ]
 if {$w<0} {set w 0}
 
+# format to a number without exponent (to use as key in graphene_get):
+set w [format %.6f $w]
+
 # normal:
 if {$ph == 3 || $ph == 5 } { set tab [lrange [graphene_get c_w1um_b $w] 1 end] }\
 else {return 0}
