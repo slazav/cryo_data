@@ -20,10 +20,10 @@ for n in "$@"; do
     device_c ask db_rpi set_filter "$name" "$flt_num" "$flt_text"
   fi
 
-  echo "$n -> db"
-  device_c ask db set_filter "$name" "$flt_num" "$flt_text"
-  echo "$n -> db_xyz"
-  device_c ask db_xyz set_filter "$name" "$flt_num" "$flt_text"
+  for db_dev in db db_xyz; do
+    echo "$n -> $db_dev"
+    device_c ask $db_dev set_filter "$name" "$flt_num" "$flt_text"
+  done
 
 done
 
