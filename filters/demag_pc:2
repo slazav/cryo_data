@@ -1,1 +1,5 @@
-set data [expr {[lindex $data 1]/18.365e-3}]
+# field, T, with shunt current correction
+set R1 .73553
+set i0 [expr {[lindex $data 1]/2.0569e-3}]
+set v0 [expr {[lindex $data 0] - [lindex $data 1]*3.84640}]
+set data [expr {($i0 - $v0/$R1)*0.112}]

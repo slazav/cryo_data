@@ -1,1 +1,2 @@
+# voltage on the magnet
 set data [expr {[lindex $data 0] - [lindex $data 1]*3.84640}]
