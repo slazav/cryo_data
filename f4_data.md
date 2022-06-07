@@ -1,7 +1,11 @@
 ## F4 and Aerogel project parameters. 2021..2022
 
-### Dilution refrigerator
 
+### Cryostat
+
+* Build by DIB and GRP, cryostat: 1984-85, frame and shielded room: 1987, mixing chamber: 1988.
+
+#### Dilution refrigerator
 * Circulation pump 1: Ruvac roots WS501, 11732, nom.pumping speed: 505m^3/h, max dP: 80mbar
 * Circulation pump 2: Alcatel 2063h s.n. 615141 (2 stages, 60m^3/h)
 * Tank volumes: 50+100+150+200 l
@@ -12,7 +16,68 @@
 * MCTF 300K, vacuum:  32727.00 Hz - 0.789 Hz
 * MCTA 4K, vacuum: 1094.28 Hz  - 77.8 mHz
 
-### Cell for Aerogel experiment, upper part
+#### Magnet v1 (1987)
+* 8T, Oxford, 1987
+
+#### Dewar v2 (2004)
+* Precision Cryogenic Systems, 2004
+* total height 83", diameter 24.13"
+* He bath diameter 7.5", bottom length 34", belly length 24", top length 20"
+* N2 tank: 110 l, He belly: 100 l.
+
+
+### Wires
+
+#### Resistance bridge and cryostat heater wires (built in 2020)
+* previosly "Red" and "Blue" connectors
+* 48 twisted pairs in 6 blocks
+* Filters: ...
+
+#### Vibrating wire lines
+* "White", "Black" and "Yellow" connectors
+* 12 "V" pairs, 12 "I" pairs, 6 cold transformers (previously 8)
+
+#### Coaxial lines
+* 4 lines
+
+#### Magnet lines
+* original MCTA magnet line + two extra lines (HS and NMR)
+* Filters: ...
+
+#### "Green" connector
+
+#### Level meter
+
+#### Main magnet leads
+
+
+### Devices
+
+#### on the rack
+* Cryogenic PS120A demag power supply
+* Cryogenic HGL200 He level meter
+* Keysight 34972A multiplexer [mult1] -- bath resistors, demag ps, level meter
+* Tenma 72-2540 power suppliees [pst1..pst4] -- pst3 broken (06.2022), pst1 have broken comp.control
+* LakeShore AC370 resistance bridge [rbridge] with 16ch switch -- also Still heater and other heaters
+* Agilent E3631A power supply for Femto lock-ins
+* EasyTester ET1091 LCR meter [] -- for measuring pressure gauge
+* Keysight 33521A generators [gen1..gen4]
+* Agilent 33220A generators [gen5..gen10]
+* Keysight 34410A multimeter [mult1] -- bath diode and other measurements
+* computer [f4b]
+* UPS, MGE pulsar evolution 500 -- for computer and network switch
+* network switch, Netgear, 24 ports -- internal network
+* small DC power supply +5,+12V -- for USB hubs
+* SR830 lock-in amplifiers [lockin1, lockin2]
+* PicoScope 4262 (16bit, with generator) [osc1]
+* PicoScope 4224 (12 bit) [osc2]
+* PicoLog ADC [adc1, adc2] -- for measuring Femto lock-ins
+
+#### on the cryostat flange
+* Femto LIA-BVD-150-H lock-in amplifiers 5x3pcs
+* Drive boxes
+
+### Cell for Aerogel experiment (2020), upper part
 
 #### Mixing chamber heat exchangers
 * 6 sinter plates
@@ -37,7 +102,7 @@
 #### Heat switch
 * Material: aluminium, 99.999% purity, Goodfellow AL007920/26
 * Dimensions: cylinder D=14mm, L=9.5mm, with 2mm-wide cylindrical groove in the center to D=6mm,
-    halves are splitted into 6 and 8 parts by longitudinal cuts..
+  halves are splitted into 6 and 8 parts by longitudinal cuts..
 
 ####Heat switch magnet
 * Dimensions: Dout=24mm, L=26mm.
@@ -57,16 +122,16 @@
 * Excitation coil: 50 um copper wire, 20+20 turns (~10 Ohm, ~2 uH) (6mT/A???)
 
 #### NMR thermometer magnet:
-*Dimensions: L=47mm, D=52mm.
-*wire: 54 NbTi cores (7um) in copper clad, 102um insulated (setting 107..110um on the machine)
-*6 layers, 2557 turns, glued with Stycast-1266.
-*Nb shield: L=60mm, OD=58mm, ID=56mm, ordered in Firmetal -- removed in 2021.
-*Calculated field: 11.1 mT/A (57.2 mT/A in the outer area)
-*Calculated inductance: 0.37H
-*Time constant with 10R shunt: 37ms
-*calculated NMR frequency (for copper gyromagnetic ratio 71.118e6 rad/s/T): 125.6kHz/A
-*Quench current 1590mA @ 4K, 1900mA @ 20mK
-*2022-03-02: CuNi short, 2.5 R.
+* Dimensions: L=47mm, D=52mm.
+* wire: 54 NbTi cores (7um) in copper clad, 102um insulated (setting 107..110um on the machine)
+* 6 layers, 2557 turns, glued with Stycast-1266.
+* Nb shield: L=60mm, OD=58mm, ID=56mm, ordered in Firmetal -- removed in 2021.
+* Calculated field: 11.1 mT/A (57.2 mT/A in the outer area)
+* Calculated inductance: 0.37H
+* Time constant with 10R shunt: 37ms
+* calculated NMR frequency (for copper gyromagnetic ratio 71.118e6 rad/s/T): 125.6kHz/A
+* Quench current 1590mA @ 4K, 1900mA @ 20mK
+* 2022-03-02: CuNi short, 2.5 R.
 
 #### Heaters-v1 (Feb-Nov 2021)
 * Wire: Eureca, 46swg, 167 Ohm/m
@@ -91,7 +156,7 @@
 * Five plates 25x30x1mm covered with kapton tape.
 
 
-### Cell for Aerogel experiment, He3 volume
+### Cell for Aerogel experiment (2020), He3 volume
 
 #### Nuclear stage plates
 * Material: OFE (CW009A) copper, 1mm plate.
@@ -180,4 +245,4 @@
 * w0ta:  I2V(100R) = 142.619, I2V(1k) = 39.0522, I2V(10k) = 5.21989 [uArms/Vpp]
 * w1ta:  I2V(100R) = 142.215, I2V(1k) = 38.9449, I2V(10k) = 5.21494 [uArms/Vpp]
 * w2ta:  I2V(100R) = 144.540, I2V(1k) = 39.0085, I2V(10k) = 5.20364 [uArms/Vpp]
-
+* I2V(100k) approx 0.543 [uArms/Vpp], I2V(1M) approx 54.5 [nArms/Vpp]
