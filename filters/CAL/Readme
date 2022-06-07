@@ -1,0 +1,17 @@
+Calibration tables
+
+I use ordinary databases to keep big calibration tables for wibrating
+wires. Each table contains resonance width instead of timestamp and pairs
+<pressure>-<temperatuure> for pressures 0:1:30 bar.
+
+Usage example can be found in ../w*ta:f1 filters. For a given width the
+whole <p>-<t> table is extracted, using linear interpolation from
+graphene get command. When table_lookup function from graphene tcl
+library is used.
+
+Note:
+* "Timestamps" can not be negative.
+* graphene_get in a database fiter can't get values from the same db.
+* at the moment calling one filter from another (using graphene_get with filter)
+  modifies timestamp and data - this is done to keep a single tcl interpreter
+  and save time.
