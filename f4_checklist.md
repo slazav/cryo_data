@@ -1,8 +1,8 @@
-## F4 Checklist (2022-02-03)
+## F4 Checklist (2022-03-07)
 
 #### magnets
 * HS          130
-* NMR         2534
+* NMR         2534 -- shortened by 2.5 Ohm
 * MC wire     2063
 
 #### top boxes
@@ -31,8 +31,8 @@
 * RHE10  -- cryobridge CH8  49.562
 * RMC    -- cryobridge CH9  65.111
 * RMC2    -- cryobridge CH10 46.445
-* RHE102  -- cryobridge CH11 47.751
 * GMR1    -- cryobridge CH13 1153
+* GMR2    -- cryobridge CH13 1152
 * R20MK2  -- cryobridge CH15 44.437
 * RSTILL2 -- cryobridge CH16 39.862
 
@@ -40,6 +40,7 @@
 * Q20MK   -- pair 1 R0=100
 * QMC1    -- pair 2 R0=132.2
 * QMC2    -- pair 3 R0=115.5
+* QHSS    -- pair 4 R0=317
 * QSTILL1 -- pair 7 R0=131
 * QSTILL2 -- pair 8 R0=122 R=900
 * DSTILL  -- pair 6
@@ -49,7 +50,7 @@
 * Q1 200R  - (heater broken)
 * Q2 200R (was broken before?)
 * Q3 200R
-* Q4 200R
+* Q4 200R  - (heater broken)
 
 #### multiplexer (bath resistors, level meter, demag)
 * RBATH01
@@ -83,4 +84,3 @@
 * He boiler 110 Ohm, green 21-22
 * Pot filling line heater, 145 Ohm, 19-20
 * demag PS heater 138 Ohm green 3-4
-
