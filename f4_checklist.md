@@ -1,4 +1,4 @@
-## F4 Checklist (2022-01-06)
+## F4 Checklist (2022-02-03)
 
 #### magnets
 * HS          130
@@ -12,10 +12,10 @@
 * W0UM - I4 - T1
 * W1UM - I5 - T3
 * W2UM - I6 - T4
-* W1NM - I12 - T5  OK?
+* W1NM - I12 - T5
 * W2NM - I11 - T6  broken
 * MCTA - I7 - I8
-* MCTF - I9 - I10
+* MCTF - I9 - I10/-sometimes works
 * NMR magnet leads  V8
 * HS magnet  leads  V9
 * 0 Ohm             V10  (noise tests)
@@ -37,19 +37,19 @@
 * RSTILL2 -- cryobridge CH16 39.862
 
 #### cryostat heaters and diodes
-* Q20MK   -- pair 1
-* QMC1    -- pair 2 R=132.2
-* QMC2    -- pair 3 R=115.5
-* QSTILL1 -- pair 7
-* QSTILL2 -- pair 8
+* Q20MK   -- pair 1 R0=100
+* QMC1    -- pair 2 R0=132.2
+* QMC2    -- pair 3 R0=115.5
+* QSTILL1 -- pair 7 R0=131
+* QSTILL2 -- pair 8 R0=122 R=900
 * DSTILL  -- pair 6
 * DBATH
 
 #### cell heaters
-* Q1 - cryobridge CH13  341.7 - (heater broken)
-* Q2 - cryobridge CH14  348.4
-* Q3 - cryobridge CH15  354.0
-* Q4 - cryobridge CH16  349.7
+* Q1 200R  - (heater broken)
+* Q2 200R (was broken before?)
+* Q3 200R
+* Q4 200R
 
 #### multiplexer (bath resistors, level meter, demag)
 * RBATH01
@@ -71,10 +71,10 @@
 * pressure gauge
 
 #### cryostat pressures (measured with RPI computer)
-* press_traps      - back of rotaty pump, input of N2 traps, 1.6bar merit gauge, ch A: 
-* press_cond       - condensing line, 1.6bar merit gauge, ch B: 0.006->0bar
-* press_1K         - 1K pot, 60mbar merit gauge, ch C: 10.63V->overload
-* press_cell_panel - cell pressure, 1.6bar merit gauge, ch D: 0.036->0bar
+* press_traps      - back of rotary pump, input of N2 traps, 1.6bar merit gauge
+* press_cond       - condensing line, 1.6bar merit gauge, 0.006->0bar
+* press_1K         - 1K pot, 60mbar merit gauge, 10.63V->overload
+* press_cell_panel - cell pressure, 1.6bar merit gauge, 0.036->0bar
 * press_still      - still pressure, log!
 * press_misc       - pirani gauges (started at RUN3)
 
