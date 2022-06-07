@@ -1,4 +1,4 @@
-## F4 Checklist (2022-03-07)
+## F4 Checklist (2022-03-30)
 
 #### magnets
 * HS          130
@@ -15,7 +15,7 @@
 * W1NM - I12 - T5
 * W2NM - I11 - T6  broken
 * MCTA - I7 - I8
-* MCTF - I9 - I10/-sometimes works
+* MCTF - I9 - I10  bad contact? sometimes works
 * NMR magnet leads  V8
 * HS magnet  leads  V9
 * 0 Ohm             V10  (noise tests)
@@ -48,7 +48,7 @@
 
 #### cell heaters
 * Q1 200R  - (heater broken)
-* Q2 200R (was broken before?)
+* Q2 200R
 * Q3 200R
 * Q4 200R  - (heater broken)
 
@@ -69,7 +69,7 @@
 * demag_ps
 
 #### pressure gauge
-* pressure gauge
+* pressure gauge   ~17pF?
 
 #### cryostat pressures (measured with RPI computer)
 * press_traps      - back of rotary pump, input of N2 traps, 1.6bar merit gauge
