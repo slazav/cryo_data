@@ -4,12 +4,15 @@
 
 * Circulation pump 1: Ruvac roots WS501, 11732, nom.pumping speed: 505m^3/h, max dP: 80mbar
 * Circulation pump 2: Alcatel 2063h s.n. 615141 (2 stages, 60m^3/h)
-* Amount of mixture: 210 L
+* Tank volumes: 50+100+150+200 l
+* Pump back volume: 7.21 l, blue line volume: 0.135 l.
+* N2 traps volume (in cold state): 10.36 l
+* Amount of mixture: 229 L
 * MCTF 4K, vacuum:    32682.02 Hz - 0.105 Hz
 * MCTF 300K, vacuum:  32727.00 Hz - 0.789 Hz
 * MCTA 4K, vacuum: 1094.28 Hz  - 77.8 mHz
 
-### Cell for Aerogel experiement, upper part
+### Cell for Aerogel experiment, upper part
 
 #### Mixing chamber heat exchangers
 * 6 sinter plates
@@ -88,7 +91,7 @@
 * Five plates 25x30x1mm covered with kapton tape.
 
 
-### Cell for Aerogel experiement, He3 volume
+### Cell for Aerogel experiment, He3 volume
 
 #### Nuclear stage plates
 * Material: OFE (CW009A) copper, 1mm plate.
