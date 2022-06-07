@@ -1,4 +1,4 @@
-## F4 Checklist (2021)
+## F4 Checklist (2022-01-06)
 
 #### magnets
 * HS          130
@@ -12,10 +12,10 @@
 * W0UM - I4 - T1
 * W1UM - I5 - T3
 * W2UM - I6 - T4
-* W1NM - V1 - T5?
-* W2NM - V2 - T6?
+* W1NM - I12 - T5  OK?
+* W2NM - I11 - T6  broken
 * MCTA - I7 - I8
-* MCTF - V11 - (V12)  -> V12 changed to coax B
+* MCTF - I9 - I10
 * NMR magnet leads  V8
 * HS magnet  leads  V9
 * 0 Ohm             V10  (noise tests)
@@ -31,8 +31,8 @@
 * RHE10  -- cryobridge CH8  49.562
 * RMC    -- cryobridge CH9  65.111
 * RMC2    -- cryobridge CH10 46.445
-* R1K2    -- cryobridge CH11 47.751 -- RHE102 in RUN4
-* GMR1    -- cryobridge CH13 1160  -- RUN3
+* RHE102  -- cryobridge CH11 47.751
+* GMR1    -- cryobridge CH13 1153
 * R20MK2  -- cryobridge CH15 44.437
 * RSTILL2 -- cryobridge CH16 39.862
 
@@ -43,10 +43,10 @@
 * QSTILL1 -- pair 7
 * QSTILL2 -- pair 8
 * DSTILL  -- pair 6
-* DBATH  4.399V
+* DBATH
 
 #### cell heaters
-* Q1 - cryobridge CH13  341.7
+* Q1 - cryobridge CH13  341.7 - (heater broken)
 * Q2 - cryobridge CH14  348.4
 * Q3 - cryobridge CH15  354.0
 * Q4 - cryobridge CH16  349.7
@@ -84,12 +84,3 @@
 * Pot filling line heater, 145 Ohm, 19-20
 * demag PS heater 138 Ohm green 3-4
 
-#### NMR RF coils
-* T1E - I9
-* T2E - I10
-* T3E - I11
-* T4E - I12
-* T1S - R coax line  140
-* T2S - G coax line  140
-* T3S - B coax line  -   -> MCTF
-* T4S - Y coax line  140
