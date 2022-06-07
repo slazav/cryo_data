@@ -10,7 +10,7 @@ graphene get command. When table_lookup function from graphene tcl
 library is used.
 
 Note:
-* "Timestamps" can not be negative.
+* "Timestamps" should be non-negative floatng point numbers without exponent.
 * graphene_get in a database fiter can't get values from the same db.
 * at the moment calling one filter from another (using graphene_get with filter)
   modifies timestamp and data - this is done to keep a single tcl interpreter
