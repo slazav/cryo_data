@@ -1,5 +1,6 @@
 #!/bin/sh -efu
 
+# Install a filter into a database.
 
 for n in "$@"; do
 
