@@ -37,6 +37,35 @@
 * "White", "Black" and "Yellow" connectors
 * 12 "V" pairs, 12 "I" pairs, 6 cold transformers (previously 8)
 
+* Femto LIA-BVD-150H lock-ins, 15pcs in 3 19" blocks, rebuilt in 2020-2022:
+  - remove internal power supply, add metal sheilds,
+  - new PCB, better coax lines inside lockins,
+  - rear-panel connectors for output (LEMO) and power (3 pin XLR)
+* Lock-in output cables: 3 cables (one per block)
+  - cable: Alpha Wire 10 Pair Screened Multipair Industrial Cable 0.23 mm, RS:1119010
+  - LEMO connectors (10pin): EGG.2B.310.CLL / FGG.2B.310.CLAD92Z (RS:1789029 / RS:1788896)
+  - 1: orange-black, 2: brown-black, 3: yellow-black, 4: white-black, 5: blue-black
+    6: green-black,  7: red-black,   8: blue-red,     9: green-red,  10: white-red
+  - Pair grounds are not connected on LEMO side, cable ground connected to lock-in
+    ground with a separate connector.
+  - There is a mistake in cable 3, pair 8: ground is blue insrterd of red!
+* Two Pico ADC-24 devices (adc1, adc2) with 1:3 dividers
+  - Divider R1: Vishay 10k Metal Film Resistor 0.125W 0.1% PTF5610K000BYEK, RS:8307422
+  - Divider R2: Vishay 40k Metal Film Resistor 0.125W 0.1% PTF5640K000BYEK, RS:8498985
+* lockin output - cable-pair - ADC input
+  - 01X -- 1-01 -- ADC1-01  06X -- 2-01 -- ADC1-11  06X -- 2-01 -- ADC2-05
+  - 01Y -- 1-02 -- ADC1-02  06Y -- 2-02 -- ADC1-12  06Y -- 2-02 -- ADC2-06
+  - 02X -- 1-03 -- ADC1-03  07X -- 2-03 -- ADC1-13  07X -- 2-03 -- ADC2-07
+  - 02Y -- 1-04 -- ADC1-04  07Y -- 2-04 -- ADC1-14  07Y -- 2-04 -- ADC2-08
+  - 03X -- 1-05 -- ADC1-05  08X -- 2-05 -- ADC1-15  08X -- 2-05 -- ADC2-09
+  - 03Y -- 1-06 -- ADC1-06  08Y -- 2-06 -- ADC1-16  08Y -- 2-06 -- ADC2-10
+  - 04X -- 1-07 -- ADC1-07  09X -- 2-07 -- ADC2-01  09X -- 2-07 -- ADC2-11
+  - 04Y -- 1-08 -- ADC1-08  09Y -- 2-08 -- ADC2-02  09Y -- 2-08 -- ADC2-12
+  - 05X -- 1-09 -- ADC1-09  10X -- 2-09 -- ADC2-03  10X -- 2-09 -- ADC2-13
+  - 05Y -- 1-10 -- ADC1-10  10Y -- 2-10 -- ADC2-04  10Y -- 2-10 -- ADC2-14
+* Generators ...
+* Drive boxes ...
+
 #### Coaxial lines
 * 4 lines
 
@@ -76,6 +105,7 @@
 #### on the cryostat flange
 * Femto LIA-BVD-150-H lock-in amplifiers 5x3pcs
 * Drive boxes
+
 
 ### Cell for Aerogel experiment (2020), upper part
 
@@ -154,6 +184,7 @@
 ####Mu-metal shield around HS Nb shield (01.03.2022)
 * Unknown grade, from storage
 * Five plates 25x30x1mm covered with kapton tape.
+
 
 
 ### Cell for Aerogel experiment (2020), He3 volume
