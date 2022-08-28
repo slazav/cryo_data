@@ -18,6 +18,11 @@
 
 #### Magnet v1 (1987)
 * 8T, Oxford, 1987
+* Max current: 71.45A == 8T.
+* Bore diameter: 90.5mm
+* 0.112 T/A, 18.365 mV/T, 54.45 mT/mV
+* Cancellation region: 14.4 cm above field center, 2mm above magnet top flange
+* L=23H
 
 #### Dewar v2 (2004)
 * Precision Cryogenic Systems, 2004
@@ -277,3 +282,67 @@
 * w1ta:  I2V(100R) = 142.215, I2V(1k) = 38.9449, I2V(10k) = 5.21494 [uArms/Vpp]
 * w2ta:  I2V(100R) = 144.540, I2V(1k) = 39.0085, I2V(10k) = 5.20364 [uArms/Vpp]
 * I2V(100k) approx 0.543 [uArms/Vpp], I2V(1M) approx 54.5 [nArms/Vpp]
+
+
+### Cell for Aerogel experiment (2022)
+
+#### New shield protection magnet
+
+* Supercon NbTi wire in Cu clad (mu-mu), 54 cores, 7um, isolation 0.102mm.
+* L1=L2=6mm, D1=D2=32mm, N1=1500, N2=250  R=1.05k
+* Calculated current: -1A.  short wire: top view ccw; + field up
+
+#### Outer cell
+
+* Araldite, machined in the university workshop
+* Dimensions: ID=40.6, OD=52, IL=84
+* NS blocks: 4, 4, 4+3, 4+3 plates on silver wires + 2 hanging plates.
+  24 plates, 128g of copper, 13g of silver, area: 72m^2, NS volume 15.8cm^3
+* Measured He volume of assembled cell (inner+outer): 60.9cm^3
+* Estimated He volume of outer cell: 25.3cm^3
+* A few wooden and Araldite spacers inside to reduce volume
+  Volume: 108.75 (outer,geom) - 15.8 (outer NS) - 21.04 (inner NS) - 60.9 (empty) = 11.0 (spacers)
+
+#### Inner cells
+
+* Same dimensions and material as old ones:
+* Material: paper with Stycast 1266, 2 layers, 294 g/m$^2$
+* Dimensions: 76x31x12 mm.
+* He volume: 17.8 cm^3 per cell.
+* Filling lines: Copper capillary, Goodfellow CU007100 99.9%, Dout=0.5 mm, Din=0.22 mm, L=0.4 m each
+  (taken from some an old cell). Shorter then before!
+
+* Use old NS blocks, re-measure surface area
+  - #1: S = 21.40 m^2  (old: 28.76)
+  - #2: S = 24.17 m^2  (old: 25.84)
+  - #3: S = 24.91 m^2  (old: 27.38)
+  - #4: S = 24.16 m^2  (old: 27.39)
+  - cell1: blocks 1+3: m_Cu=84.75g, m_Ag=10.75g, S=46.31m$^2$, V=10.49cm$^3$
+  - cell2: blocks 2+4: m_Cu=86.00g, m_Ag=10.00g, S=48.33m$^2$, V=10.55cm$^3$
+* Silver wires: Alfa Aesar 1.0mm wire Premion, 99.999% (much better then in the old cell).
+  Annealing: 400deg/h to 850 deg, 18h
+
+#### Bolometers and vibrating wires
+
+* Bolometer boxes:7x9x5mm with 0.5mm hole in 100um PET wall. Estimated time constant 1.0s
+* 13.5um + 4.5um wires in each bolometer
+* Hole in bolometer 1 covered with a cup: D=4mm circle of 0.10mm PET with 0.21mm Stycast paper spacers
+
+* + w0ta - tantalum wire in the outer cell
+
+* + w1ta - tantalum wire in the inner cell 1
+* + w1bh - bolometer heater in cell 1 (13.5um) -- copper color legs
+* + w1bt - bolometer thermometer in cell 2 (4.5um) -- white legs
+* + w1a  - 4.5um -- white legs
+* + w1b  - 0.315um -- copper legs
+* + w1c - 0.390um on pcb
+* + w1d - 0.180um on pcb  -- broken!
+
+* + w2ta - tantalum wire in the inner cell 2
+* + w2bh - bolometer heater in cell 1 (13.5um)
+* + w2bt - bolometer thermometer in cell 2 (4.5um)
+* + w2a  - 4.5um -- white legs
+* + w2b  - 0.180um -- copper legs
+* + w2c  - 0.315um on pcb
+* + w2d  - 0.180um on pcb
+
