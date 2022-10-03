@@ -1,0 +1,7 @@
+set K0 6.44311478621134
+set R0 384.723224859115
+set R [lindex $data 0]
+set A [lindex $data 1]
+
+set data [expr {1/sqrt(8.0 * 10**($A/10.0))/$K0/($R+$R0) }]
+return 1
