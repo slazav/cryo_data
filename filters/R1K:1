@@ -1,4 +1,4 @@
- # F4_R1K,v1,3,9999,1
+# F4_R1K,v1,3,9999,1
 set tab {
 48.455874 304.47628
 48.826835 285.44191
@@ -98,9 +98,12 @@ set tab {
 100.000000   1.22317
 }
 
-# fix 2021-08-01 jump!
-if {$time>1627772400} {
-  lset data 0 [expr {[lindex $data 0] * 48.680/49.048}]
+# get room-temperature value from database
+set R  [lindex [graphene_get_prev R1K_RT $time] 1]
+if {$R != {}} {
+  set R0 48.680
+  lset data 0 [expr {[lindex $data 0] * $R0/$R}]
 }
+
 
 flt_table_lookup $tab 0 0

@@ -107,9 +107,11 @@ set tab {
 350          0.0038
 }
 
-# fix 2021-08-01 jump!
-if {$time>1627772400 && [lindex $data 0] < 248} {
-  lset data 0 [expr {[lindex $data 0] * 46.299/46.804}]
+# get room-temperature value from RMC2_RT database
+set R  [lindex [graphene_get_prev RMC2_RT $time] 1]
+if {$R != {}} {
+  set R0 46.299
+  lset data 0 [expr {[lindex $data 0] * $R0/$R}]
 }
 
 flt_table_lookup $tab 0 0
