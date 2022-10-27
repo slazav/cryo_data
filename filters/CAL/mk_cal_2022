@@ -3,11 +3,11 @@
 pkg load he3lib
 
 # Wire parameters:
-name={"w0ta"; "w1ta"; "w2ta"; "w0um"; "w1um"; "w2um"; "w1nm"};  # name
-rho=[16.7, 16.7, 16.7, 6.05, 6.05, 6.05, 6.05];                 # density [g/cm3]
-diam=[124, 124, 124, 4.5, 4.5, 4.5, 0.45];                      # diameter [microns]
-freq=[1715, 2059, 2028, 3131.5, 3142.5, 1741.1, 4333.3];        # vac.freq [Hz]
-mkn = [1,1,1,0,0,0,0];  # make normal phase calibration?
+name={"w1ta2"; "w2ta2"; "w1bh"; "w2bh"; "w1a"; "w2a"; "w1bt"; "w2bt"};  # name
+rho=[16.7, 16.7, 6.05, 6.05, 6.05, 6.05, 6.05, 6.05]; # density [g/cm3]
+diam=[124, 124, 13.5, 13.5, 4.5, 4.5, 4.5, 4.5]; # diameter [microns]
+freq=[3995.4, 1710.5, 4189.9, 3499.3,  1520.5, 3120.8, 3828.9, 6678.2]; # vac.freq [Hz]
+mkn = [1,1,1,1,0,0,0,0];  # make normal phase calibration?
 
 # min/max width in normal/b-phase
 wnmin = 1;

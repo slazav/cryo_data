@@ -1,0 +1,28 @@
+set w [lindex $data 12]
+set t $time
+
+set a 0.114
+set b 0.196789624526096
+set c -6.21302245463039e-05
+
+set I  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
+set ph [lindex [graphene_get_prev cell1_phase $t] 1]
+set P  [lindex [graphene_get_prev cell_press $t] 1]
+
+if { $P eq {nan} } { return 0 }
+
+# subtract intrinsic width:
+set w [expr {$w - $a - $b*$I**2 - $c*$I**4} ]
+if {$w<0} {set w 0}
+
+# format to a number without exponent (to use as key in graphene_get):
+set w [format %.6f $w]
+
+# normal:
+if     {$ph == 2 || $ph == 4 } { set tab [lrange [graphene_get c_w1ta2_n $w] 1 end]}\
+elseif {$ph == 3 || $ph == 5 } { set tab [lrange [graphene_get c_w1ta2_b $w] 1 end] }\
+else   { return 0 }
+
+set data [table_lookup $tab $P 0]
+set time $t
+return 1

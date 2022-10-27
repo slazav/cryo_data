@@ -4,9 +4,9 @@ I use ordinary databases to keep big calibration tables for wibrating
 wires. Each table contains resonance width instead of timestamp and pairs
 <pressure>-<temperatuure> for pressures 0:1:30 bar.
 
-Usage example can be found in ../w*ta:f1 filters. For a given width the
+Usage example can be found in ../w*ta:1 filters. For a given width the
 whole <p>-<t> table is extracted, using linear interpolation from
-graphene get command. When table_lookup function from graphene tcl
+graphene get command. Then table_lookup function from graphene tcl
 library is used.
 
 Note:
