@@ -8,10 +8,15 @@
 #### Dilution refrigerator
 * Circulation pump 1: Ruvac roots WS501, 11732, nom.pumping speed: 505m^3/h, max dP: 80mbar
 * Circulation pump 2: Alcatel 2063h s.n. 615141 (2 stages, 60m^3/h)
+
 * Tank volumes: 50+100+150+200 l
 * Pump back volume: 7.21 l, blue line volume: 0.135 l.
+* Rot.Rump front volume: 6.02 l
 * N2 traps volume (in cold state): 10.36 l
 * Amount of mixture: 229 L
+* 2022.10 - added 9.9l of He3 and (return) 3.5l of He4 from the cell
+* Amount of mixture in the fridge when still gets empty: 168l
+
 * MCTF 4K, vacuum:    32682.02 Hz - 0.105 Hz
 * MCTF 300K, vacuum:  32727.00 Hz - 0.789 Hz
 * MCTA 4K, vacuum: 1094.28 Hz  - 77.8 mHz
@@ -68,11 +73,13 @@
   - 04Y -- 1-08 -- ADC1-08  09Y -- 2-08 -- ADC2-02  09Y -- 2-08 -- ADC2-12
   - 05X -- 1-09 -- ADC1-09  10X -- 2-09 -- ADC2-03  10X -- 2-09 -- ADC2-13
   - 05Y -- 1-10 -- ADC1-10  10Y -- 2-10 -- ADC2-04  10Y -- 2-10 -- ADC2-14
+* Shielded twisted pairs with TinyXLR connectors: 1:+ 2:gnd 3:-
+
 * Generators ...
 * Drive boxes ...
 
 #### Coaxial lines
-* 4 lines
+* 6 lines: R G B Y B K
 
 #### Magnet lines
 * original MCTA magnet line + two extra lines (HS and NMR)
@@ -97,6 +104,7 @@
 * EasyTester ET1091 LCR meter [] -- for measuring pressure gauge
 * Keysight 33521A generators [gen1..gen4]
 * Agilent 33220A generators [gen5..gen10]
+* Sigent  SDG1032X generators [gen11..gen16]
 * Keysight 34410A multimeter [mult1] -- bath diode and other measurements
 * computer [f4b]
 * UPS, MGE pulsar evolution 500 -- for computer and network switch
@@ -345,4 +353,14 @@
 * + w2b  - 0.180um -- copper legs
 * + w2c  - 0.315um on pcb
 * + w2d  - 0.180um on pcb
+
+#### Cell heaters
+
+* Wire: Eureca, 40um.
+* Coils: 20 turns, D=8mm, ~200 Ohm each.
+* Leads (same as before): Supercon 387M-2A3D1, single core NbTi in CuNi clad, 0.127mm, 16.5-17.0 Ohm/wire at room T.
+* 10nF capacitors on each twisted pair in the connector.
+* Resistances 1..4: (2xleads/(2xleads+heater)): 30.3/227.4 30.3/210.3 29.6/211.5 29.3/232.6
+* Resistances 1..4: 197.1, 180.0, 181.9, 203.3 (TODO: measure with Res.Bridge)
+
 
