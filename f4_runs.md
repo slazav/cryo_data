@@ -436,4 +436,39 @@ Dilution fridge with disconnected HS:
 * cell is broken after the run
 
 ----------------------------------------------------------------------
+## RUN20 2022-09-07 - 2022-09-20
+
+### Modifications
+
+* Install cell2022
+
+### Results
+
+* leak in the cryostat (He3 input in MC)
+
+----------------------------------------------------------------------
+## RUN21 2022-09-28 - 2022-11-09
+
+### Modifications
+
+* Fix leak in MC
+
+### Results
+
+* Measiured most of forks with He3
+
+## Problems
+
+* W0TA does not work
+* small overheating of MC by COMP magnet
+
+----------------------------------------------------------------------
+## RUN22 2023-01-04 -
+
+### Modifications
+
+* remake COMP magnet wires (Cu - CuNi connection)
+* make ground for coaxial lines (~20 cm of 0.2mm NbTi in CuNi matrix)
+* revert I2 and T wire connectors, fix broken w2b wire (not important as the wire is broken)
+* connect V12 and T6 at 4K, now w2d can be measured through T6 transformer
 
