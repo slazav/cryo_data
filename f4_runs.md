@@ -188,7 +188,7 @@ because of cold leak.
 
 
 ----------------------------------------------------------------------
-## RUN3 23.03.2021 - 06.05.2021
+## RUN3 23.04.2021 - 06.05.2021
 
 ### Modifications
 
@@ -313,7 +313,7 @@ Cold leaks in both cryostat and the cell at >120K.
 
 
 ----------------------------------------------------------------------
-## RUN15 2022-01-06 - start N2 transfer
+## RUN15 2022-01-06 - 2022-01-12
 
 ### Modifications
 
@@ -348,7 +348,7 @@ Re-make cell filling lines (different Stycast)
 
 ### Measurements
 
-* All wires vs drive and fied at vacuum, 10mK
+* All wires vs drive and field at vacuum, 10mK
 * Wire measurements at 4K: all tantalum wires vs field, all cell wires vs pressure.
 
 ----------------------------------------------------------------------
@@ -454,8 +454,10 @@ Dilution fridge with disconnected HS:
 * Fix leak in MC
 
 ### Results
-
-* Measiured most of forks with He3
+- 2022-10-10 demag1: large amount of He4 in the cell
+- 2022-10-13..19 - cleaning He3
+- 2022-10-26 demag2: lowest temperature 140uK in cell2,
+  200uK in cell1 (heater was connected, big heat leak!)
 
 ## Problems
 
@@ -469,6 +471,14 @@ Dilution fridge with disconnected HS:
 
 * remake COMP magnet wires (Cu - CuNi connection)
 * make ground for coaxial lines (~20 cm of 0.2mm NbTi in CuNi matrix)
+  -- no result, MCTA background is still high, 12uV at 0.1V (4.2uA) excitation
+
 * revert I2 and T wire connectors, fix broken w2b wire (not important as the wire is broken)
 * connect V12 and T6 at 4K, now w2d can be measured through T6 transformer
+
+### Measurements
+
+* wire backgrounds w/o field from 15K to 20mK
+* wire resonances at <20mK
+* field dependence (thin wires at low field, Ta wires at all fields)
 
