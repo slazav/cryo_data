@@ -1,10 +1,10 @@
 set w [lindex $data 12]
 set t $time
 
-set a 1.26
+set a 1.94
 
 #set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
-set ph [lindex [graphene_get_prev cell1_phase $t] 1]
+set ph [lindex [graphene_get_prev cell2_phase $t] 1]
 set P  [lindex [graphene_get_prev cell_press $t] 1]
 
 if { $P eq {nan} } { return 0 }
