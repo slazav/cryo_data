@@ -1,7 +1,7 @@
 set w [lindex $data 12]
 set t $time
 
-set a 38e-3
+set a 31.1e-3
 set b 0.0868659891179014
 set c -2.72160443171838e-05
 
