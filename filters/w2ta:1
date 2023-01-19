@@ -19,8 +19,8 @@ if {$w<0} {set w 0}
 set w [format %.6f $w]
 
 # normal:
-if     {$ph == 2 || $ph == 4 } { set tab [lrange [graphene_get c_w2ta_n $w] 1 end]}\
-elseif {$ph == 3 || $ph == 5 } { set tab [lrange [graphene_get c_w2ta_b $w] 1 end] }\
+if     {$ph == 2} { set tab [lrange [graphene_get c_w2ta_n $w] 1 end]}\
+elseif {$ph == 3} { set tab [lrange [graphene_get c_w2ta_b $w] 1 end] }\
 else   {return 0}
 
 set data [table_lookup $tab $P 0]

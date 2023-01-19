@@ -18,7 +18,7 @@ if {$w<0} {set w 0}
 set w [format %.6f $w]
 
 # normal:
-if {$ph == 3 || $ph == 5 } { set tab [lrange [graphene_get c_w1nm_b $w] 1 end] }\
+if {$ph == 3} { set tab [lrange [graphene_get c_w1nm_b $w] 1 end] }\
 else {return 0}
 
 set data [table_lookup $tab $P 0]
