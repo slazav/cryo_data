@@ -1,25 +1,26 @@
 set t $time
+set w [lindex $data 12]
 
 set ph [lindex [graphene_get_prev cell2_phase $t] 1]
 set P  [lindex [graphene_get_prev cell_press $t] 1]
 
 if { $P  eq {nan} } { return 0 }
-if { $ph != 3 }   { return 0 } # B phase
+if { $ph != 3 }   { return 0 }; # B phase
 
 #intrinsic width
 set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
-set df0 [expr -2.045034e * $B**4 + 5.137238 * $B**2 + 4.131104e-01]
+set df0 [expr {-2.045034 * $B**4 + 5.137238 * $B**2 + 4.131104e-01}]
 
-set w [lindex $data 12]
 set w [expr {$w - $df0} ]
 if {$w<0} {set w 0}
 
 # Calibration vs tantalum wire width at P=0
 # see 20230104-RUN22/20230118f-SF-overnight_warming
 if {$P==0} {
-  set wta [expr -1.731144e-05 * $w**2 + 9.794350e-03 * $w + 1.632669e-02]
+  set wta [expr {-1.731144e-05 * $w**2 + 9.794350e-03 * $w}]
   set tab [lrange [graphene_get c_w2ta_b $wta] 1 end]
   set data [table_lookup $tab $P 0]
+  set time $t
   return 1
 }
 
