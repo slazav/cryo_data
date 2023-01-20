@@ -21,6 +21,10 @@
 * MCTF 300K, vacuum:  32727.00 Hz - 0.789 Hz
 * MCTA 4K, vacuum: 1094.28 Hz  - 77.8 mHz
 
+Typical circulation regimes:
+* Vstill=0.3V, lines 1+4, Pcond = 103.8mbar, ndot = 70.1 umol/s
+
+
 #### Magnet v1 (1987)
 * 8T, Oxford, 1987
 * Max current: 71.45A == 8T.

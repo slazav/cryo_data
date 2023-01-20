@@ -167,7 +167,7 @@ Wire names for Cell-2022:
 * w2b -- 0.180um NbTi wire (classic design) in cell 2 - broken
 * w1c -- 0.390um NbTi wire (PCB design) in cell 1 - broken
 * w2c -- 0.315um NbTi wire (PCB design) in cell 1 - broken?
-* w2d -- 0.180um NbTi wire (PCB design) in cell 2
+* w2d -- 0.180um NbTi wire (PCB design) in cell 2 - ?
 
 Other names:
 
@@ -178,9 +178,18 @@ Databases:
 * `<name>` -- fit result: Tcnt,drive volt,Err,A,Ae,B,Be,C,Ce,D,De,F,Fe,dF,dFe
 * `<name>_pars` -- sweep parameters: T0, TE-T0, F1, F2, N, dt, dtf, dir, drive volt, drive ph
 * `<name>_dbox`  -- drive box parameters: type:INT32, data: Rbox [Ohm], attenuator [dB]
-* `<name>_sweeps` -- sweep data: T,F,X,Y
+* `<name>_sweeps` -- sweep data: time[s],freq/Hz,X1/V,Y1/V[,X2/V,Y2/V]
 * `c_<name>_n`  -- calibration table for normal phase: W,P0,T0,P1,T1,...
 * `c_<name>_b`  -- calibration table for B-phase: W,P0,T0,P1,T1,...
+
+Measurement program can have a pre-measured background. Original values
+from lock-in are X1, Y1. Values after background is subtrackted is X2,
+Y2. In the tracking mode offset found in the fit is also subtracted
+(values X3,Y3).
+
+Change 2023-01-20:
+* Old columns: "time, freq, X1, Y1" in sweep mode, "time, freq, X3,Y3" in tracking mode.
+* New columns: "time, freq, X1, Y1 [, X2, Y2]" in both modes. X2,Y2 are recorded only if the pre-measured background was used.
 
 ### CW NMR data
 
