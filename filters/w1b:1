@@ -17,7 +17,7 @@ if {$w<0} {set w 0}
 # Calibration vs tantalum wire width at P=0
 # see 20230104-RUN22/20230118f-SF-overnight_warming
 if {$P==0} {
-  set wta [expr {3.896049e-05 *$w**2 + 8.803653e-03 *$w}]
+  set wta [expr {1.412842e-05 *$w**2 + 9.146722e-03 *$w}]
   if {$wta<0} {return 0}
   set tab [lrange [graphene_get c_w1ta_b $wta] 1 end]
   set data [table_lookup $tab $P 0]
