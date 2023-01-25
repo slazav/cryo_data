@@ -18,6 +18,7 @@ if {$w<0} {set w 0}
 # see 20230104-RUN22/20230118f-SF-overnight_warming
 if {$P==0} {
   set wta [expr {-1.731144e-05 * $w**2 + 9.794350e-03 * $w}]
+  if {$wta<0} {return 0}
   set tab [lrange [graphene_get c_w2ta_b $wta] 1 end]
   set data [table_lookup $tab $P 0]
   set time $t
