@@ -19,7 +19,7 @@ if {$w<0} {set w 0}
 if {$P==0} {
   set wta [expr {1.412842e-05 *$w**2 + 9.146722e-03 *$w}]
   if {$wta<0} {return 0}
-  set tab [lrange [graphene_get c_w1ta_b $wta] 1 end]
+  set tab [lrange [graphene_get c_w1ta2_b $wta] 1 end]
   set data [table_lookup $tab $P 0]
   set time $t
   return 1
