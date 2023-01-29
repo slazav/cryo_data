@@ -1,7 +1,7 @@
 set w [lindex $data 12]
 set t $time
 
-set a 18.4e-3
+set a 18.374e-3
 set b 0.0868659891179014
 set c -2.72160443171838e-05
 
@@ -23,6 +23,7 @@ if     {$ph == 2} { set tab [lrange [graphene_get c_w2ta2_n $w] 1 end]}\
 elseif {$ph == 3} { set tab [lrange [graphene_get c_w2ta2_b $w] 1 end] }\
 else   {return 0}
 
-set data [table_lookup $tab $P 0]
+set temp [table_lookup $tab $P 0]
+set data [list $temp [expr $temp/$B]]
 set time $t
 return 1

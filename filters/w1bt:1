@@ -3,7 +3,7 @@ set t $time
 
 set a 1.26
 
-#set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
+set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
 set ph [lindex [graphene_get_prev cell1_phase $t] 1]
 set P  [lindex [graphene_get_prev cell_press $t] 1]
 
@@ -20,6 +20,7 @@ set w [format %.6f $w]
 if {$ph == 3} { set tab [lrange [graphene_get c_w1bt_b $w] 1 end] }\
 else   { return 0 }
 
-set data [table_lookup $tab $P 0]
+set temp [table_lookup $tab $P 0]
+set data [list $temp [expr $temp/$B]]
 set time $t
 return 1
