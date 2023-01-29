@@ -175,7 +175,7 @@ Other names:
 * mctf -- tuning fork in the mixind chamber
 
 Databases:
-* `<name>` -- fit result: Tcnt,drive volt,Err,A,Ae,B,Be,C,Ce,D,De,F,Fe,dF,dFe
+* `<name>` -- fit result: Tcnt,drive volt,Err,A,Ae,B,Be,C,Ce,D,De,F,Fe,dF,dFe [X4 Y4 F-F0]
 * `<name>_pars` -- sweep parameters: T0, TE-T0, F1, F2, N, dt, dtf, dir, drive volt, drive ph
 * `<name>_dbox`  -- drive box parameters: type:INT32, data: Rbox [Ohm], attenuator [dB]
 * `<name>_sweeps` -- sweep data: time[s],freq/Hz,X1/V,Y1/V[,X2/V,Y2/V]
@@ -185,11 +185,17 @@ Databases:
 Measurement program can have a pre-measured background. Original values
 from lock-in are X1, Y1. Values after background is subtrackted is X2,
 Y2. In the tracking mode offset found in the fit is also subtracted
-(values X3,Y3).
+(values X3,Y3), values are rotated to the direction of applied force (X4,Y4)
 
-Change 2023-01-20:
+Change 2023-01-20 in `<name>_sweeps` database:
 * Old columns: "time, freq, X1, Y1" in sweep mode, "time, freq, X3,Y3" in tracking mode.
 * New columns: "time, freq, X1, Y1 [, X2, Y2]" in both modes. X2,Y2 are recorded only if the pre-measured background was used.
+
+Change 2023-01-29 in `<name>` database:
+* in tracking mode "X4 Y4 F-F0" values are added
+
+Filters:
+* <name>:f1 -- temperature calibration [mK] and T/B [mK/T]
 
 ### CW NMR data
 
