@@ -25,7 +25,7 @@ else   {return 0}
 
 set temp [table_lookup $tab $P 0]
 set TB NaN
-catch {set TB [expr $temp/$B]}
+catch {set TB [expr $temp/(0.112*$I)]}
 set data [list $temp $TB]
 set time $t
 return 1
