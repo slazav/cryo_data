@@ -24,6 +24,8 @@ elseif {$ph == 3} { set tab [lrange [graphene_get c_w2ta2_b $w] 1 end] }\
 else   {return 0}
 
 set temp [table_lookup $tab $P 0]
-set data [list $temp [expr $temp/$B]]
+set TB NaN
+catch {set TB [expr $temp/$B]}
+set data [list $temp $TB]
 set time $t
 return 1
