@@ -1,0 +1,13 @@
+#!/bin/sh -efu
+
+# Get data from database
+
+for db in "$@"; do
+  device_c ask db get_range "$db" |
+  while read a b; do
+    a=${a%.*}
+    aa=$(date +"%Y-%m-%d %H:%M:%S" -d @$a)
+    echo "$aa  $b"
+  done > $db
+done
+

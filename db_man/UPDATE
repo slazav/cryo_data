@@ -1,0 +1,21 @@
+#!/bin/sh -efu
+
+# Update a database.
+
+for db in "$@"; do
+  [ -f $db ] || continue
+
+  for dbdev in db db_xyz; do
+    echo "$db -> $dbdev"
+    (
+      echo "del_range $db 0 inf"
+      while read d t l; do
+        [ "${d%%\#*}" != "" ] || continue
+        tt=$(date +%s -d "$d $t")
+        echo "put $db $tt $l";
+      done < $db
+    ) | device_c use_dev $dbdev &>/dev/null
+  done
+
+done
+
