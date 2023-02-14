@@ -1,0 +1,8 @@
+# Vlock_in/Vwire
+if {[lindex $data 3] == 0} {
+  set data 1.0
+} else {
+  # calibration 2022-09-16
+  set data 96.5279
+}
+return 1

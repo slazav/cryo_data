@@ -1,0 +1,16 @@
+set name w1a
+
+set t $time
+set rbox [lindex $data 0]
+set att  [lindex $data 1]
+set tr   [lindex [graphene_get_prev ${name}_meas:3 $t] 1]
+set time $t
+
+if {$tr == 1 && $att == 20} {
+  # measured 2023-01-20
+  set data "3630.838317 -2240.123601 1779.138365 -56.552894 14.033021 -0.010071  -729.761723 -1793.648971 254.058084 -21.902106 12.203613 -0.000143"
+  return 1
+}
+
+return 0
+
