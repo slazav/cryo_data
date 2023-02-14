@@ -1,0 +1,15 @@
+set name w2um
+
+set t $time
+#set rbox [lindex $data 0]
+#set att  [lindex $data 1]
+set tr   [lindex [graphene_get_prev ${name}_meas:3 $t] 1]
+set time $t
+
+if {$tr == 1} {
+  #RUN 16-19
+  set data "-1210.64760755931 -1418.57234175486 10329.5377436085 -424.8900164267 -11.8763043481375 0.000487820719759339  -288.340960284832 -2321.74365152668 -138.432028972202 -48.2578592118969 10.2895162324468 -0.546580740841889"
+  return 1
+}
+
+return 0
