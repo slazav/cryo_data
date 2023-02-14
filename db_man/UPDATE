@@ -1,21 +1,42 @@
 #!/bin/sh -efu
 
-# Update a database.
+# Update multiple databases from a single file
 
-for db in "$@"; do
-  [ -f $db ] || continue
+fname="$1"
+
+function get_dbnames(){
+  sed -rn 's/#.*//; s/^ *([a-zA-Z0-9_]+).*/\1/p' "$1" |
+  sort -u
+}
+
+function get_data(){
+  sed -rn 's/#.*//; s/^ *'$2' +(.*)/\1/p' "$1" |
+  sort -u
+}
+
+function check_db(){
+  grep -q "$1" dblist && return 0 ||:
+  echo "Database not in the list: $1"
+  return 1
+}
+
+dbnames=$(get_dbnames "$fname")
+echo $dbnames
+
+for db in $dbnames; do
+  check_db "$db" || continue
+  echo "processing $db"
 
   for dbdev in db db_xyz; do
     echo "$db -> $dbdev"
     (
       echo "del_range $db 0 inf"
+      get_data "$fname" "$db" |
       while read d t l; do
         [ "${d%%\#*}" != "" ] || continue
         tt=$(date +%s -d "$d $t")
         echo "put $db $tt $l";
-      done < $db
-    ) | device_c use_dev $dbdev &>/dev/null
+      done
+    ) | device_c use_dev $dbdev | grep -v '^\(#OK\|\)$'
   done
-
 done
-

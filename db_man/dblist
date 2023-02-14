@@ -1,0 +1,31 @@
+cell0_phase cell1_phase cell2_phase
+
+mcta_dbox
+
+w0ta_dbox w1ta_dbox w2ta_dbox
+w0um_dbox w1um_dbox w2um_dbox
+w1nm_dbox w2nm_dbox
+
+w1ta2_dbox w2ta2_dbox
+w1bh_dbox w2bh_dbox
+w1bt_dbox w2bt_dbox
+w1a_dbox w2a_dbox
+w1c_dbox w2c_dbox
+w1b_dbox w2b_dbox
+w2d_dbox
+
+
+mcta_meas
+
+w0ta_meas w1ta_meas w2ta_meas
+w0um_meas w1um_meas w2um_meas
+w1nm_meas w2nm_meas
+
+w1ta2_meas w2ta2_meas
+w1bh_meas w2bh_meas
+w1bt_meas w2bt_meas
+w1a_meas w2a_meas
+w1c_meas w2c_meas
+w1b_meas w2b_meas
+w2d_meas
+

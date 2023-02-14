@@ -8,6 +8,6 @@ for db in "$@"; do
     a=${a%.*}
     aa=$(date +"%Y-%m-%d %H:%M:%S" -d @$a)
     echo "$aa  $b"
-  done > $db
+  done
 done
 
