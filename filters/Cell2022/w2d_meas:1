@@ -1,0 +1,8 @@
+# Vlock_in/Vwire
+if {[lindex $data 3] == 0} {
+  set data 1.0
+} else {
+  # approx.
+  set data 30
+}
+return 1
