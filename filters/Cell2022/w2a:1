@@ -19,6 +19,7 @@ if {$w<0} {set w 0}
 if {$P==0} {
   set wta [expr {6.156107e-06 * $w**2 + 9.333155e-03 * $w}]
   if {$wta<0} {return 0}
+  set wta [format %.6f $wta]
   set tab [lrange [graphene_get c_w2ta2_b $wta] 1 end]
   set temp [table_lookup $tab $P 0]
   set TB NaN
