@@ -9,7 +9,7 @@ if { $ph != 3 }   { return 0 }; # B phase
 
 #intrinsic width
 set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
-set df0 [expr {8.887580e-01 *$B**4 + 2.761258 *$B**2 + 3.209117e-01}]
+set df0 [expr {0.888758 *$B**4 + 3.182 *$B**2 + 0.0536}]
 
 set w [expr {$w - $df0} ]
 if {$w<0} {set w 0}

@@ -1,7 +1,7 @@
 set w [lindex $data 12]
 set t $time
 
-set a 1.7
+set a 0.4494
 set b 1.16897547847427
 
 set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]

@@ -1,8 +1,8 @@
 set w [lindex $data 12]
 set t $time
 
-set a 2.50806181401228
-set b 1.5256149092003
+set a 0.3369
+set b 0
 
 set B  [lindex [graphene_get_prev demag_pc:f2 $t] 1]
 set ph [lindex [graphene_get_prev cell1_phase $t] 1]
