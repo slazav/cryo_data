@@ -32,7 +32,7 @@ if {$P==0} {
 
 # format to a number without exponent (to use as key in graphene_get):
 set w [format %.6f $w]
-set tab [lrange [graphene_get c_w1a_b $w] 1 end] }\
+set tab [lrange [graphene_get c_w2a_b $w] 1 end]
 set data [table_lookup $tab $P 0]
 set time $t
 return 1
