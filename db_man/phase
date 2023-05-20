@@ -227,9 +227,13 @@ cell0_phase 2023-05-17 15:55:00  2
 cell1_phase 2023-05-17 15:55:00  2
 cell2_phase 2023-05-17 15:55:00  2
 
-# warming up cryostat to pump condensing lines
+# warming up cryostat, pumping condensing lines
 
 cell0_phase 2023-05-18 11:56:00  1
 cell1_phase 2023-05-18 11:56:00  1
 cell2_phase 2023-05-18 11:56:00  1
+
+cell0_phase 2023-05-19 13:47:00  2
+cell1_phase 2023-05-19 13:47:00  2
+cell2_phase 2023-05-19 11:37:00  2
 
