@@ -22,7 +22,8 @@
 * MCTA 4K, vacuum: 1094.28 Hz  - 77.8 mHz
 
 Typical circulation regimes:
-* Vstill=0.3V, lines 1+4, Pcond = 103.8mbar, ndot = 70.1 umol/s
+* Vstill=0.3V, lines 1+4, Pcond = 103.8mbar, ndot =  70.1 umol/s
+* Vstill=0.6V, lines 1+4, Pcond = 462.9mbar, ndot = 220.9 umol/s
 
 
 #### Magnet v1 (1987)
@@ -367,4 +368,12 @@ Typical circulation regimes:
 * Resistances 1..4: (2xleads/(2xleads+heater)): 30.3/227.4 30.3/210.3 29.6/211.5 29.3/232.6
 * Resistances 1..4: 197.1, 180.0, 181.9, 203.3 (TODO: measure with Res.Bridge)
 
+#### Heat leaks
+* Leak to cell1 at small field: 1.2nW after 10 days, 0.5nW after 30 days
+* 6.5 mW/(T/s)^2  -- measured during magnetization after R22D03. This corresponds to 80pW at 1mA/s
+* Leak to cells at full field: 2.2nW, 2.9nW (measured at 6.1mK for 5 hours, after ~40 days of running, after ~10 days of precooling)
+
+### He3 sample
+
+* Purified 2022-10. Purity 99.9506% (re-measured 2023-05-22)
 
