@@ -171,13 +171,20 @@ Wire names for Cell-2022:
 
 Other names:
 
-* mcta -- 0.127mm tantalum wire in the miing chamber
+* mcta -- 0.127mm tantalum wire in the mixing chamber
 * mctf -- tuning fork in the mixind chamber
 
 Databases:
 * `<name>` -- fit result: Tcnt,drive volt,Err,A,Ae,B,Be,C,Ce,D,De,F,Fe,dF,dFe [X4 Y4 F-F0]
 * `<name>_pars` -- sweep parameters: T0, TE-T0, F1, F2, N, dt, dtf, dir, drive volt, drive ph
-* `<name>_dbox`  -- drive box parameters: type:INT32, data: Rbox [Ohm], attenuator [dB]
+* `<name>_dbox`  -- Manual database, drive box parameters: type:INT32, data: Rbox [Ohm], attenuator [dB]
+  Filters:
+  - f1: current/voltage conversion [Arms/Vpp]
+  - f2: background parameters
+* `<name>_meas`  -- Manual database, measurement parameters: type:INT16, data: lock-in S1 switch(0,1), lock-in time constant (0..7), lock-in gain (0..15), transformer connected (0,1).
+  Filters:
+  - f1: transformer gain (Vout/Vin)
+  - f2: lock-in range [Vrms]
 * `<name>_sweeps` -- sweep data: time[s], freq[Hz], X1[V], Y1[V], Drive[V]
 * `c_<name>_n`  -- calibration table for normal phase: W,P0,T0,P1,T1,...
 * `c_<name>_b`  -- calibration table for B-phase: W,P0,T0,P1,T1,...
