@@ -1,0 +1,16 @@
+# lock-in range, V
+
+set rangesS1 {1 0.3 0.1 0.03 0.01 3e-3 1e-3 3e-4
+              0.1 0.03 0.01 3e-3 1e-3 3e-4 1e-4 3e-5}
+
+set rangesS0 {0.1 0.03 0.01 3e-3 1e-3 3e-4 1e-4 3e-5
+              0.01 3e-3 1e-3 3e-4 1e-4 3e-5 1e-5 3e-6}
+
+set S [lindex $data 0]
+set R [lindex $data 2]
+
+if {$S == 0} {set data [lindex $rangesS0 $R]}\
+else {set data [lindex $rangesS1 $R]}
+
+return 1
+
