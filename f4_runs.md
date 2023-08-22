@@ -465,7 +465,7 @@ Dilution fridge with disconnected HS:
 * small overheating of MC by COMP magnet
 
 ----------------------------------------------------------------------
-## RUN22 2023-01-04 -
+## RUN22 2023-01-04 - 2023-06-23
 
 ### Modifications
 
@@ -481,4 +481,25 @@ Dilution fridge with disconnected HS:
 * wire backgrounds w/o field from 15K to 20mK
 * wire resonances at <20mK
 * field dependence (thin wires at low field, Ta wires at all fields)
+
+* 0bar, 2bar, 5bar pressures
+
+----------------------------------------------------------------------
+## RUN23 2023-06-29 - 2023-07-06
+
+Leak in IVC
+
+----------------------------------------------------------------------
+## RUN24 2023-08-18 - 
+
+### Modifications
+
+* fixing leak in the IVC feedthrough
+* fixing leak in He bath (o-ring of the bottom Lemo connector)
+* heater on condensing lines 3 and 4
+
+Leak in IVC
+
+----------------------------------------------------------------------
+
 
