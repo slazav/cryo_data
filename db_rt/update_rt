@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+
+import numpy
+import argparse
+import sys
+
+sys.path.insert(1, '/home/sla/DATA_MEAS/scripts/py')
+import graphene002 as graphene
+#graphene.set_args(('device_c', 'ask', 'db'))
+
+#### parse arguments
+
+parser = argparse.ArgumentParser()
+parser.add_argument('dbname')
+parser.add_argument('t1', type=int)
+parser.add_argument('t2', type=int)
+
+#parser.add_argument('--icta_plot', default='',
+#                    help='plot ICTA data to a png file')
+args = parser.parse_args()
+
+
+#### load data
+
+data = graphene.get_range(args.dbname, args.t1, args.t2, usecols=(1))
+res = numpy.mean(data[0])
+
+print("device_c ask db put %s_RT %d %f"%(args.dbname, args.t1, res))

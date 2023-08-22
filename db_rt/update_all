@@ -1,0 +1,23 @@
+function update_db(){
+  name=$1
+  t1=$(date +%s -d "$2")
+  t2=$(date +%s -d "$3")
+  cmd=$(./update_rt $name $t1 $t2)
+  echo $cmd
+  $cmd
+}
+
+for n in R1K RSTILL RSTILL2 R20MK RHE02 RHE04 RHE06 RHE08 RHE10; do
+#  update_db $n '2021-09-29' '2021-10-01'
+#  update_db $n '2021-08-23' '2021-08-23 14:30'
+#  update_db $n '2021-08-20' '2021-08-21'
+#  update_db $n '2021-12-30' '2022-01-01'
+#  update_db $n '2022-08-01' '2022-08-04'
+#  update_db $n '2022-03-01' '2022-03-02'
+#  update_db $n '2022-02-01' '2022-02-02'
+#  update_db $n '2022-08-28' '2022-09-03'
+#  update_db $n '2022-09-21' '2022-09-28'
+  update_db $n '2023-07-17' '2023-08-01'
+  update_db $n '2023-08-01' '2023-08-10'
+#  update_db $n '2023-08-10' '2023-08-17'
+done
