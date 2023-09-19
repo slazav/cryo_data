@@ -490,7 +490,7 @@ Dilution fridge with disconnected HS:
 Leak in IVC
 
 ----------------------------------------------------------------------
-## RUN24 2023-08-18 - 
+## RUN24 2023-08-18 - 2023-08-22
 
 ### Modifications
 
@@ -501,5 +501,14 @@ Leak in IVC
 Leak in IVC
 
 ----------------------------------------------------------------------
+## RUN25 2023-08-23 - 2023-08-25
 
+One more attempt to glue broken feedthrough.
+Leak in IVC - bigger and faster then at RUN24.
+
+----------------------------------------------------------------------
+
+## RUN26 2023-09-12 -
+
+* new feedthrough
 
