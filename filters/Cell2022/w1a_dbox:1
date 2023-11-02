@@ -1,5 +1,5 @@
-# approximate values, calibration needed!
-set K0 6.44
+# calibrated 2023-11-02
+set K0 [expr 6.44/0.972408]
 set R0 384
 set R [lindex $data 0]
 set A [lindex $data 1]
