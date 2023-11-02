@@ -1,5 +1,5 @@
 # calibrated 2023-11-02 with Rbox=1kOhm
-set K0 [expr 6.44/1.165441]
+set K0 [expr 6.44/0.942405]
 set K0 6.44
 set R0 384
 set R [lindex $data 0]
