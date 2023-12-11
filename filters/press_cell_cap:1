@@ -1,3 +1,9 @@
-set d [lindex $data 0]
-set data [expr {($d-17.233)/(17.94-17.233) * 5.00}]
+# Calibration 2023-12-11
+# See ~/DATA_PROC/Cryostat/cell_press_cal
+set x [lindex $data 0]
+set A 7.14475
+set B -0.379368
+set x0 17.1933
+
+set data [expr {$A*($x-$x0) + $B*($x-$x0)**2}]
 return 1
