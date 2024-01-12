@@ -1,0 +1,4 @@
+# he level in litres
+set mm [lindex $data 1]
+set data [expr {15 + $mm/540.0*85}]
+
